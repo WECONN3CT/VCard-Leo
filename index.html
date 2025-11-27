@@ -242,18 +242,24 @@
             to { opacity: 1; }
         }
 
-        .avatar {
+        .avatar-container {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             border: 4px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 8px 32px rgba(139, 92, 246, 0.25), 
                         0 0 0 1px rgba(139, 92, 246, 0.1);
+            overflow: hidden;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
             object-fit: cover;
             object-position: 50% var(--avatar-y);
-            margin: 0 auto;
-            display: block;
-            background: #ffffff;
+            transform: scale(var(--avatar-scale, 1.18));
         }
 
         .name {
@@ -565,7 +571,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        body.dark-mode .avatar {
+        body.dark-mode .avatar-container {
             border: 4px solid rgba(139, 92, 246, 0.3);
             box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
             background: #000000;
@@ -757,9 +763,11 @@
         </div>
         
         <div class="profile-section">
-            <img src="Images/leo.png" 
-                 alt="Leonardo Braun" 
-                 class="avatar">
+            <div class="avatar-container">
+                <img src="Images/leo.png" 
+                     alt="Leonardo Braun" 
+                     class="avatar">
+            </div>
             <h1 class="name">Leonardo Braun</h1>
             <p class="title">Chief Sales Officer</p>
             <div class="company">
