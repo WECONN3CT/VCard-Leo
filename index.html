@@ -21,6 +21,7 @@
             --shadow-md: 0 4px 16px rgba(139, 92, 246, 0.12);
             --shadow-lg: 0 8px 32px rgba(139, 92, 246, 0.15);
             --avatar-y: 100%;
+            --avatar-shift: 4%;
         }
 
         * {
@@ -259,7 +260,7 @@
             border-radius: 50%;
             object-fit: cover;
             object-position: 50% var(--avatar-y);
-            transform: scale(var(--avatar-scale, 1.18));
+            transform: scale(var(--avatar-scale, 1.18)) translateY(var(--avatar-shift));
         }
 
         .name {
